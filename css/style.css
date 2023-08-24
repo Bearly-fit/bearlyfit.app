@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -15,6 +16,15 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+}
+
+body {
+  background: #e2f9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Fuzzy Bubbles', cursive;
+  margin-top: 1em;
 }
 
 /*
@@ -245,3 +255,20 @@ textarea {
   }
 }
 
+img {
+  width: 320px;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 75px
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: normal;
+  width: 600px;
+  text-align:center;
+}
