@@ -11,6 +11,10 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+:root {
+  --highlight-background: #579bb3;
+  --container-width: 900px;
+}
 
 html {
   color: #222;
@@ -19,21 +23,240 @@ html {
 }
 
 body {
-  background: #e2f9ff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: #fff;
   font-family: 'Fuzzy Bubbles', cursive;
-  margin-top: 1em;
+  overflow-x: hidden;
+}
+
+nav {
+  padding: 0.5em 0;
+  position: fixed;
+  width:100%;
+  top: 0;
+  background: #fff;
+  z-index: 999999;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #logo {
+    font-size: 2em;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    img {
+      margin-left: 0.25em;
+    }
+  }
+
+  & ol {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-content: center;
+
+    & li {
+      padding: 0 0.5em;
+    }
+  }
+}
+
+container {
+  width: var(--container-width);
+  display: flex;
+  justify-content: space-between;
+}
+
+hero {
+  background-color: var(--highlight-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1em;
+  margin-top: 64px;
+  position: relative;
+  padding-bottom: 85px;
+  padding-top: 48px;
+
+  & container {
+    align-items: center;
+
+    & > div:nth-child(1) {
+      width: 415px;
+      text-align: center;
+    }
+  }
+
+  h2 {
+    font-size: 3em;
+    margin: 0 0 0.5em 0;
+
+  }
+
+  h3 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    margin-top: 0;
+  }
+
+  #subscribeButton {
+    padding: 1em;
+    font-family: Calibri, sans-serif;
+    font-size: 1.5em;
+    border-radius: 4px;
+    width: 80%;
+    background-color: #366271;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
+
+  & > container {
+    padding-bottom: 2em;
+    div:nth-child(2) {
+      margin-left: 5em;
+      align-self: center;
+      p {
+        font-size: 14pt;
+        text-align: justify;
+        font-family: Calibri, sans-serif;
+      }
+    }
+  }
+
+  & h3 {
+    font-size: 2em;
+    margin: 1em 0 0.5em 0;
+  }
+}
+
+#socials {
+  list-style: none;
+  padding: 0;
+  margin-top: 3em;
+
+  & li {
+    padding: 0.5em 0 0.5em 0;
+    margin: 0.5em 0;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    span {
+      background-color: var(--highlight-background);
+      padding: 0.5em 1em;
+      width: 100%;
+      margin-left: 1em;
+      font-size: 18pt;
+      border-radius: 4px;
+    }
+
+  }
+}
+
+#previousUpdates {
+  padding: 1em;
+  background-color: var(--highlight-background);
+  color: #fff;
+  &>div {
+    width: var(--container-width);
+    margin: 3em auto;
+  }
+
+  h3 {
+    font-size: 2em;
+    margin: 1em 0 0.5em 0;
+  }
+
+  #previousUpdatesGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    a {
+      padding: 1em;
+      text-align: center;
+      color: #fff;
+      font-family: Calibri, sans-serif;
+      text-decoration: none;
+
+      span {
+        display: block;
+        margin-top: 0.5em;
+        font-size: 14pt;
+      }
+
+      img {
+        border-radius: 4px;
+      }
+
+    }
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  font-family: Calibri, sans-serif;
+  font-size: 12pt;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.curve {
+  position: absolute;
+  height: 130px;
+  width: 100%;
+  bottom: 0;
   text-align: center;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
+.curve::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  transform: translate(85%, 60%);
+  background-color: #fff;
+}
+
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: var(--highlight-background);
+  transform: translate(-4%, 40%);
+  z-index: -1;
+}
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -254,23 +477,4 @@ textarea {
   h3 {
     page-break-after: avoid;
   }
-}
-
-img {
-  width: 320px;
-}
-
-h1 {
-  margin-bottom: 0;
-  font-weight: normal;
-  font-size: 75px
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 40px;
-  font-weight: normal;
-  max-width: 600px;
-  width: 100%;
-  text-align:center;
 }
