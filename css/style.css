@@ -11,29 +11,361 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+:root {
+  --highlight-background: #579bb3;
+  --container-width: 900px;
+}
 
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  overflow-x: hidden;
 }
 
 body {
-  background: #e2f9ff;
+  background: #fff;
+  font-family: 'Fuzzy Bubbles', cursive;
+}
+
+#heroInfo {
+  text-align: center;
+  margin-top: 1em;
+}
+
+nav {
+  padding: 0.5em 0;
+  position: fixed;
+  width:100%;
+  top: 0;
+  background: #fff;
+  z-index: 999999;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #logo {
+    font-size: 2em;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    img {
+      margin-left: 0.25em;
+    }
+  }
+
+  & ol {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-content: center;
+
+    & li {
+      padding: 0 0.5em;
+    }
+  }
+}
+
+container {
+  width: 100%;
+}
+
+hero {
+  background-color: var(--highlight-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1em;
+  margin-top: 64px;
+  position: relative;
+  padding-bottom: 90px;
+  padding-top: 48px;
+
+  & container {
+    align-items: center;
+  }
+
+  #heroImage {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    font-size: 3em;
+    margin: 0 0 0.5em 0;
+
+  }
+
+  h3 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    margin-top: 0;
+  }
+
+  #subscribeButton {
+    padding: 1em;
+    font-family: Calibri, sans-serif;
+    font-size: 1.5em;
+    border-radius: 4px;
+    width: 80%;
+    background-color: #366271;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  padding: 1em;
+
+  container {
+    padding-bottom: 2em;
+    div:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        font-size: 14pt;
+        text-align: justify;
+        font-family: Calibri, sans-serif;
+      }
+    }
+  }
+
+  & h3 {
+    font-size: 2em;
+    margin: 1em 0 0.5em 0;
+  }
+}
+
+#socials {
+  margin-top: 3em;
   display: flex;
   flex-direction: column;
+  text-align: center;
+
+  ol {
+    list-style: none;
+    padding: 0;
+  }
+
+
+  & li {
+    padding: 0.5em 0 0.5em 0;
+    margin: 0.5em 0;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    span {
+      background-color: var(--highlight-background);
+      padding: 0.5em 1em;
+      width: 100%;
+      margin-left: 1em;
+      font-size: 1.2em;
+      border-radius: 4px;
+      max-width: 320px;
+    }
+  }
+}
+
+#previousUpdates {
+  padding: 1em;
+  background-color: var(--highlight-background);
+  color: #fff;
+
+  h3 {
+    font-size: 2em;
+    margin: 1em 0 0.5em 0;
+  }
+
+  #previousUpdatesGrid {
+    a {
+      padding: 1em;
+      text-align: center;
+      color: #fff;
+      font-family: Calibri, sans-serif;
+      text-decoration: none;
+      display: block;
+
+      span {
+        display: block;
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+
+      img {
+        border-radius: 4px;
+        width: 80%;
+      }
+    }
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
   align-items: center;
-  font-family: 'Fuzzy Bubbles', cursive;
-  margin-top: 1em;
+  height: 64px;
+  font-family: Calibri, sans-serif;
+  font-size: 12pt;
+  justify-content: space-between;
+  padding: 0 1em;
+
+  span:nth-child(1) {
+    max-width: 80%;
+  }
+}
+
+.curve {
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  bottom: 0;
   text-align: center;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
+.curve::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: calc(55% - 4px);
+  height: 100%;
+  transform: translate(85%, 60%);
+  background-color: #fff;
+}
+
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: calc(55% - 4px);
+  height: 100%;
+  background-color: var(--highlight-background);
+  transform: translate(-4%, 40%);
+  z-index: -1;
+}
+
+#instagramContainer {
+  background:#FFF;
+  border:0;
+  border-radius:3px;
+  box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+  margin: 1px;
+  max-width:400px;
+  min-width:326px;
+  padding:0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 368px) {
+  #socials span {
+    font-size: 1.4em !important;
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) {
+  .curve {
+    height: 75px;
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 1024px) {
+  #heroInfo {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  #heroImage {
+    width: 315px !important;
+    margin: 0;
+  }
+
+  main {
+    padding: 0;
+    margin-top: 5em;
+
+    container {
+      padding-bottom: 2em;
+
+      div:nth-child(2) {
+        margin-right: 5em;
+        align-self: center;
+        display: block;
+      }
+    }
+  }
+
+  container {
+    width: var(--container-width);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  #previousUpdates {
+    & > div {
+      width: var(--container-width);
+      margin: 3em auto;
+    }
+  }
+
+  #previousUpdatesGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    a {
+      display: inline;
+
+      span {
+        font-size: 14pt !important;
+      }
+
+      img {
+        border-radius: 4px;
+        width: 275px;
+      }
+    }
+  }
+
+  .curve {
+    height: 130px;
+  }
+
+  #socials {
+    margin-top: 0;
+  }
+}
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -254,23 +586,4 @@ textarea {
   h3 {
     page-break-after: avoid;
   }
-}
-
-img {
-  width: 320px;
-}
-
-h1 {
-  margin-bottom: 0;
-  font-weight: normal;
-  font-size: 75px
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 40px;
-  font-weight: normal;
-  max-width: 600px;
-  width: 100%;
-  text-align:center;
 }
