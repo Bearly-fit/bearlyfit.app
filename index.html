@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
   <head>
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="manifest" href="webmanifest.json" crossorigin="use-credentials">
     <meta name="theme-color" content="#fafafa">
   </head>
 
@@ -39,13 +39,13 @@
     </nav>
     <hero>
       <container>
-        <div>
+        <div id="heroImage">
+          <img src="img/logo.png" width="350" alt="Bearly Fit Logo" />
+        </div>
+        <div id="heroInfo">
           <h2>Bearly Fit</h2>
           <h3>An upcoming health app<br />for the average bear</h3>
           <a href="https://bearly.fit/getupdates" id="subscribeButton" target="_blank" title="Subscribe to our newsletter">Subscribe for updates</a>
-        </div>
-        <div>
-          <img src="img/logo.png" width="350" alt="Bearly Fit Logo" />
         </div>
       </container>
       <div class="curve"></div>
@@ -53,8 +53,42 @@
     <main>
       <container>
         <div>
+          <p>We're building a fun, friendly and accessible health app for the average person.</p>
+          <p>We think apps today don't give you a complete of your health and we want to solve that!</p>
+          <br />
+          <div id="socials">
+            <p class="bold">Follow us to get the latest updates as they happen:</p>
+            <ol>
+              <li>
+                <a href="https://instagram.com/BearlyFitApp" title="Instagram: @BearlyFitApp" target="_blank">
+                  <img src="img/socials/instagram.png" width="64" height="64" alt="Instagram: @BearlyFitApp"/>
+                  <span>
+                  @BearlyFitApp
+                </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/BearlyFitApp" title="Twitter: @BearlyFitApp" target="_blank">
+                  <img src="img/socials/twitter2.png" width="64" height="64" alt="Twitter: @BearlyFitApp"/>
+                  <span>
+                  @BearlyFitApp
+                </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://bearly.fit/discord" title="Bearly Fit Discord Server" target="_blank">
+                  <img src="img/socials/discord.png" width="64" height="49" alt="Bearly Fit Discord Server"/>
+                  <span>
+                  bearly.fit/discord
+                </span>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div>
           <h3>Latest update</h3>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-5MNlaqCoS/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width: 400px">
+          <blockquote class="instagram-media" id="instagramContainer" data-instgrm-permalink="https://www.instagram.com/reel/C-5MNlaqCoS/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
             <div style="padding:16px;">
               <a href="https://www.instagram.com/reel/C-5MNlaqCoS/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
                 <div style=" display: flex; flex-direction: row; align-items: center;">
@@ -106,38 +140,6 @@
           </blockquote>
           <script async src="//www.instagram.com/embed.js"></script>
         </div>
-        <div>
-          <p>We're building a fun, friendly and accessible health app for the average person.</p>
-          <p>We think apps today don't give you a complete of your health and we want to solve that!</p>
-          <br />
-          <p class="bold">Follow us to get the latest updates as they happen:</p>
-          <ol id="socials">
-            <li>
-              <a href="https://instagram.com/BearlyFitApp" title="Instagram: @BearlyFitApp" target="_blank">
-                <img src="img/socials/instagram.png" width="64" height="64" alt="Instagram: @BearlyFitApp"/>
-                <span>
-                  @BearlyFitApp
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/BearlyFitApp" title="Twitter: @BearlyFitApp" target="_blank">
-                <img src="img/socials/twitter2.png" width="64" height="64" alt="Twitter: @BearlyFitApp"/>
-                <span>
-                  @BearlyFitApp
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://bearly.fit/discord" title="Bearly Fit Discord Server" target="_blank">
-                <img src="img/socials/discord.png" width="64" height="49" alt="Bearly Fit Discord Server"/>
-                <span>
-                  bearly.fit/discord
-                </span>
-              </a>
-            </li>
-          </ol>
-        </div>
       </container>
     </main>
     <div id="previousUpdates">
@@ -146,31 +148,31 @@
         <div id="previousUpdatesGrid">
 
           <a href="https://www.youtube.com/watch?v=Kt1AwKhpS30" target="_blank">
-            <img src="https://i.ytimg.com/vi/Kt1AwKhpS30/hqdefault.jpg" width="275" height="154" />
+            <img src="https://i.ytimg.com/vi/Kt1AwKhpS30/hqdefault.jpg" width="275" alt="Youtube Thumbnail"/>
             <span>Bearly Fit - Dev Log - User defaults</span>
           </a>
           <a href="https://www.youtube.com/watch?v=cJG2Vx7x9lA" target="_blank">
-            <img src="https://i.ytimg.com/vi/cJG2Vx7x9lA/hqdefault.jpg" width="275" height="154" />
+            <img src="https://i.ytimg.com/vi/cJG2Vx7x9lA/hqdefault.jpg" width="275" alt="Youtube Thumbnail"/>
             <span>Bearly Fit - Dev Log - Workout Plan UI change</span>
           </a>
           <a href="https://www.youtube.com/watch?v=nizM0FDtJQU" target="_blank">
-            <img src="https://i.ytimg.com/vi/nizM0FDtJQU/hqdefault.jpg" width="275" height="154" />
+            <img src="https://i.ytimg.com/vi/nizM0FDtJQU/hqdefault.jpg" width="275" alt="Youtube Thumbnail" />
             <span>Bearly Fit - Dev Log - Bits and Bobs</span>
           </a>
           <a href="https://www.youtube.com/watch?v=zXjxW3HM1-0" target="_blank">
-            <img src="https://i.ytimg.com/vi/zXjxW3HM1-0/hqdefault.jpg" width="275" height="154" />
+            <img src="https://i.ytimg.com/vi/zXjxW3HM1-0/hqdefault.jpg" width="275" alt="Youtube Thumbnail" />
             <span>Bearly Fit - Dev Log - Starting Workout Plans</span>
           </a>
           <a href="https://www.youtube.com/watch?v=VhSOVgvPK1k" target="_blank">
-            <img src="https://i.ytimg.com/vi/VhSOVgvPK1k/hqdefault.jpg" width="275" height="154" />
+            <img src="https://i.ytimg.com/vi/VhSOVgvPK1k/hqdefault.jpg" width="275" alt="Youtube Thumbnail" />
             <span>Bearly Fit - Dev Log - Exercise Logging Improved</span>
           </a>
           <a href="https://www.youtube.com/watch?v=PgVbr3ecuRA" target="_blank">
-            <img src="https://i.ytimg.com/vi/PgVbr3ecuRA/hqdefault.jpg" width="275" height="154" />
+            <img src="https://i.ytimg.com/vi/PgVbr3ecuRA/hqdefault.jpg" width="275" alt="Youtube Thumbnail"/>
             <span>Bearly Fit - Dev Log - Notes, Info etc</span>
           </a>
           <a href="https://www.youtube.com/watch?v=WXJBr6PjAc4" target="_blank">
-            <img src="https://i.ytimg.com/vi/WXJBr6PjAc4/hqdefault.jpg" width="275" height="154" />
+            <img src="https://i.ytimg.com/vi/WXJBr6PjAc4/hqdefault.jpg" width="275" alt="Youtube Thumbnail" />
             <span>Bearly Fit - Dev Log - Initial Exercise Screen</span>
           </a>
         </div>
