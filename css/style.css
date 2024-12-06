@@ -166,12 +166,12 @@ main {
   ol {
     list-style: none;
     padding: 0;
+    margin: 0 auto;
   }
 
 
   & li {
-    padding: 0.5em 0 0.5em 0;
-    margin: 0.5em 0;
+    margin: 1em 0;
 
     a {
       text-decoration: none;
@@ -187,7 +187,7 @@ main {
       margin-left: 1em;
       font-size: 1.2em;
       border-radius: 4px;
-      max-width: 320px;
+      max-width: 200px;
     }
   }
 }
@@ -587,4 +587,11 @@ textarea {
   h3 {
     page-break-after: avoid;
   }
+}
+
+#instagram-social span {
+  transform: rotate(-2deg);
+}
+#bluesky-social span {
+  transform: rotate(2deg);
 }
